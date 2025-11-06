@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discipline Coach ? Build Unbreakable Consistency</title>
+  <meta name="description" content="A lightweight habit tracker with streaks and a Pomodoro timer to build discipline." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="container header">
+    <h1>Discipline Coach</h1>
+    <p class="tagline">Identity ? Systems ? Consistency. Tiny wins, daily.</p>
+  </header>
+
+  <main class="container grid">
+    <section class="card" aria-labelledby="habits-title">
+      <div class="card-header">
+        <h2 id="habits-title">Daily Habits</h2>
+        <button id="addHabitBtn" class="btn">+ Add</button>
+      </div>
+      <div class="input-row" id="addHabitRow" hidden>
+        <input id="newHabitInput" type="text" placeholder="e.g., 10 push-ups" />
+        <button id="saveHabitBtn" class="btn primary">Save</button>
+        <button id="cancelHabitBtn" class="btn subtle">Cancel</button>
+      </div>
+      <ul id="habitList" class="list"></ul>
+      <footer class="card-footer">
+        <button id="resetDayBtn" class="btn subtle">Reset Today</button>
+        <span id="todayLabel" class="muted"></span>
+      </footer>
+    </section>
+
+    <section class="card" aria-labelledby="pomodoro-title">
+      <h2 id="pomodoro-title">Pomodoro</h2>
+      <div class="timer">
+        <div id="timerDisplay" class="time">25:00</div>
+        <div class="row">
+          <button id="startPauseBtn" class="btn primary">Start</button>
+          <button id="resetTimerBtn" class="btn">Reset</button>
+        </div>
+        <div class="row">
+          <label>
+            Focus (min)
+            <input id="focusMinutes" type="number" min="1" max="60" value="25" />
+          </label>
+          <label>
+            Break (min)
+            <input id="breakMinutes" type="number" min="1" max="30" value="5" />
+          </label>
+        </div>
+        <div class="muted">Completed today: <span id="pomodorosCount">0</span></div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="coach-title">
+      <h2 id="coach-title">Discipline Playbook</h2>
+      <ol class="playbook">
+        <li>
+          <strong>Identity first</strong>: Decide the kind of person you want to be.
+          Ask: "What would a disciplined person do now?"
+        </li>
+        <li>
+          <strong>Systems over goals</strong>: Make the next action obvious, easy,
+          and time-bound. Use tiny commitments.
+        </li>
+        <li>
+          <strong>Consistency beats intensity</strong>: Never miss twice. If you slip,
+          do the smallest version today to keep the streak alive.
+        </li>
+        <li>
+          <strong>Environment design</strong>: Remove friction, add cues. Layout your
+          workout clothes, block distracting sites, set time windows.
+        </li>
+        <li>
+          <strong>Track & reflect</strong>: Check off once per day. Review weekly: What
+          helped? What hindered? Adjust.
+        </li>
+      </ol>
+      <blockquote id="quote" class="quote"></blockquote>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <span>Built for humans who ship daily.</span>
+  </footer>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
